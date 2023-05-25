@@ -5,17 +5,19 @@ import datetime
 
 
 def blog(request):
-    date = datetime.datetime.now()
-    posts = Post.objects.filter(published_date__lte=date)
+    posts = Post.objects.filter(status=1)
     context = {'posts': posts}
     return render(request, 'blog/blog-home.html', context)
 
 
 def blog_single(request , pid):
-    post = get_object_or_404(Post, pk=pid)
+    posts = Post.objects.filter(status=1)
+    post = get_object_or_404(posts, pk=pid) 
+    less = Post.objects.filter(status=1,pk__lt=pid)[:1]
+    more = Post.objects.filter(status=1,pk__gt=pid).reverse()[:1]
     post.counted_view += 1
     post.save()
-    context = {'post': post}
+    context = {'post': post,'less':less,'more':more}
     return render(request, 'blog/blog-single.html',context)
 
 
