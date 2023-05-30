@@ -32,7 +32,7 @@ def newsletter_view(request):
     if request.method == 'POST':
         form = NewsLetterForm(request.POST)
         if form.is_valid():
-            form.save()
+            form.save(commit=False)
             messages.add_message(request,messages.SUCCESS,'your email sended')
             return  HttpResponseRedirect('/')
     else:
