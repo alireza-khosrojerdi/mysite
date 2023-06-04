@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.models import Post
-# Create your views here.
 
+# Create your views here.
 
 def blog(request, **kwargs):
     posts = Post.objects.filter(status=1)

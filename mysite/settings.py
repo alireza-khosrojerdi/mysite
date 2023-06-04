@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_summernote',
     'captcha',
+    'accounts',
 ]
 # sites framework
 SITE_ID = 2
