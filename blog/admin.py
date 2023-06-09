@@ -21,6 +21,9 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('post', 'approved')
     search_fields = ['title', 'content']
 
+    def __str__(self):
+        return self.name
+
 
 admin.site.register(Comment,CommentAdmin)
 admin.site.register(Post, PostAdmin)
