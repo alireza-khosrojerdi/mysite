@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'accounts',
 ]
 # sites framework
-SITE_ID = 2
+SITE_ID = 3
 
 # robots
 ROBOTS_USE_HOST = True
@@ -70,6 +70,17 @@ MULTI_CAPTCHA_ADMIN = {
 # accounts
 AUTH_USER_MODEL = 'accounts.CustomUser'
 AUTHENTICATION_BACKENDS = ['accounts.backends.EmailBackend']
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_FROM = 'perseus00900@gmail.com'
+EMAIL_HOST_USER = 'perseus00900@gmail.com'
+EMAIL_HOST_PASSWORD = 'rdseatpnsellgvfv'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+PASSWORD_RESET_TIMEOUT = 14400
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
