@@ -13,3 +13,8 @@ def snippet(value, arg=20):
 def latestposts(arg=3):
     posts = Post.objects.filter(status=1).order_by('-published_date')[:arg]
     return {'posts': posts}
+
+@register.inclusion_tag('website/website-posts.html')
+def Summary(arg=3):
+    posts = Post.objects.filter(status=1).order_by('-counted_view')[:arg]
+    return {'posts': posts}

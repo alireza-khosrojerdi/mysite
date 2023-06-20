@@ -1,5 +1,5 @@
 from django import forms
-from website.models import Contact , Newsletter
+from website.models import Contact
 from captcha.fields import CaptchaField
 
 
@@ -19,9 +19,4 @@ class ContactForm(forms.ModelForm):
 
 
 
-class NewsLetterForm(forms.ModelForm):
-
-    class Meta:
-        model = Newsletter
-        fields = '__all__'
         

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% load blog_tags %}
+<div class="bradcam_area breadcam_bg_3">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text">
+                    <h3>blog</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="blog_area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mb-5 mb-lg-0">
+                <div class="blog_left_sidebar">
+                    {% for post in posts %}
+                    <article class="blog_item">
+                        <div class="blog_item_img">
+                            <img class="card-img rounded-0" src="{{post.image.url}}" alt="">
+                            <div class="blog_item_date">
+                                <h3>{{post.published_date|date:'d'}}</h3>
+                                <p>{{post.published_date|date:'M'}}</p>
+                            </div>
+                        </div>
+                        <div class="blog_details">
+                            <a class="d-inline-block" href="{% url 'blog:single' pid=post.id %}">
+                                <h2>{{post.title}}</h2>
+                            </a>
+                            <p>{{post.content|safe}}</p>
+                            <ul class="blog-info-link">
+                                {% for cat in post.category.all %}
+                                <li><a href="{% url 'blog:category' cat_name=cat.name %}">{{cat.name}}</a></li>
+                                {% endfor %}
+                                <li><a>{% comments_count post.id %} Comments</a></li>
+                                <li><a href="{% url 'blog:author' author_username=post.author.username %}">{{post.author.get_full_name}}</a></li>
+                                <li><a>{{post.counted_view}} views</a></li>
+                            </ul>
+
+                        </div>
+                    </article>
+                    {% endfor %}
+                    <nav class="blog-pagination justify-content-center d-flex">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Previous">
+                                    <i class="ti-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link">1</a>
+                            </li>
+                            <li class="page-item active">
+                                <a href="#" class="page-link">2</a>
+                            </li>
+                            <li class="page-item">
+                                <a href="#" class="page-link" aria-label="Next">
+                                    <i class="ti-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    {% include 'blog/blog-search.html' %}
+                    
+                    {% postcategories %}
+                    
+                    {% latestposts %}
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

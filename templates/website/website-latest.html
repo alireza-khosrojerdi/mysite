@@ -1,27 +1,32 @@
 {% load static %}
-{% load tags %}
-{% for post in posts%}
-<div class="single-recent-blog-post item">
-    <div class="thumb">
-        <a href="{% url 'blog:single' pid=post.id %}"><img class="img-fluid" src="{{post.image.url}}" alt=""></a>
-    </div>
-    <div class="details">
-        <div class="tags">
-            <ul>
-                {% for cat in post.category.all %}
-                <li>
-                    <a href="{% url 'blog:category' cat_name=cat.name %}">{{cat.name}}</a>
-                </li>
-                {% endfor %}
-            </ul>
+
+<div class="portfolio_image_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section_title text-center mb-90">
+                    <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Latest Posts</h3>
+                    <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">To Watch our lasest posts , hold your mouse on each other then tap view</p>
+                </div>
+            </div>
         </div>
-        <a href="{% url 'blog:single' pid=post.id %}">
-            <h4 class="title">{{post.title}}</h4>
-        </a>
-        <p>
-            {{post.content|snippet|safe}}
-        </p>
-        <h6 class="date">{{post.published_date|date:'d M Y'}}</h6>
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-lg-4 col-md-6 col-lg-4">
+                    <div class="single_Portfolio wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                        <div class="portfolio_thumb">
+                            <img src="{{post.image.url}}" alt="">
+                        </div>
+                        <div class="portfolio_hover">
+                            <div class="title">
+                                <span>{{post.title}}</span>
+                                <h3>{{post.content|truncatechars:15|safe}}</h3>
+                                <a class="boxed-btn3" href="{% url 'blog:single' pid=post.id %}">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
-{% endfor %}

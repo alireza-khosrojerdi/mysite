@@ -1,113 +1,160 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load tags %}
+<div class="slider_area">
+    <div class="single_slider about_banner  d-flex align-items-center slider_bg_2 overlay">
+        <div class="container">
+            <div class="row align-items-center justify-content-start">
+                <div class="col-lg-12 col-md-12">
+                    <div class="slider_text">
+                        <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
+                            i am a creative person that focus on one-to-one customer service with robust ideas.
+                        </h3>
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- start banner Area -->
-<section class="about-banner relative">
-	<div class="overlay overlay-bg"></div>
-	<div class="container">
-		<div class="row d-flex align-items-center justify-content-center">
-			<div class="about-content col-lg-12">
-				<h1 class="text-white">
-					About Us
-				</h1>
-				<p class="text-white link-nav"><a href="index.html">Home </a> <span class="lnr lnr-arrow-right"></span>
-					<a href="about.html"> About Us</a></p>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End banner Area -->
+<div class="our_mission_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="mission_text">
+                    <h4>Our Purpose</h4>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="mision_info">
+                    <div class="single_mission">
+                        <p>I want to learn Django better than now when I made the project</p>
+                    </div>
+                    <div class="single_mission">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut ex veritatis, pariatur voluptate
+                            libero modi obcaecati ipsam quos assumenda odit consectetur quam excepturi dignissimos,
+                            explicabo quia eum mollitia aliquid facere?</p>
+                    </div>
+                    <div class="single_mission">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut ex veritatis, pariatur voluptate
+                            libero modi obcaecati ipsam quos assumenda odit consectetur quam excepturi dignissimos,
+                            explicabo quia eum mollitia aliquid facere?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about_area">
+    <div class="container">
+        <div class="row justify-content-end">
+            <div class="col-lg-5 offset-lg-1">
+                <div class="about_info">
+                    <div class="section_title white_text">
+                        <span class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">About Us</span>
+                        <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Empowering individuals
+                        </h3>
+                        <p class="mid_text wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">ELorem ipsum dolor,
+                            sit amet consectetur adipisicing elit. Ut ex veritatis, pariatur voluptate
+                            libero modi obcaecati ipsam quos assumenda odit consectetur quam excepturi dignissimos,
+                            explicabo quia eum mollitia aliquid facere?</p>
+                        <p class="last_text wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">“Function
+                            information without cross action media value.</p>
+                        <a href="#" class="boxed-btn3 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">About
+                            Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="how_we_work_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="work_info">
+                    <div class="section_title">
+                        <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">How we work</h3>
+                        <p class="mid_text wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".4s">“Function
+                            information without cross action media value.</p>
+                        <p class="last_p wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">Efficiently
+                            unleash cross-media tour function information without cross action media value. Quickly
+                            maximize timely deliverables for real-time schemas.</p>
+                    </div>
+                    <div class="video_watch d-flex align-items-center">
+                        <div class="play_btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                            <a href="https://www.youtube.com/watch?v=D7tF-cY2M9o" class="video_icon popup-video"> <i
+                                    class="fa fa-play"></i> </a>
+                        </div>
+                        <span class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".7s"> Watch Video</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+-->
 
-<!-- Start about-info Area -->
-<section class="about-info-area section-gap">
-	<div class="container">
-		<div class="row align-items-center">
-			<div class="col-lg-6 info-left">
-				<img class="img-fluid" src="{% static 'img/about/info-img.jpg' %}" alt="">
-			</div>
-			<div class="col-lg-6 info-right">
-				<h6>About Us</h6>
-				<h1>Who We Are?</h1>
-				<p>
-					Here, I focus on a range of items and features that we use in life without giving them a second
-					thought. such as Coca Cola. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-					incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-					ullamco.
-				</p>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End about-info Area -->
+{% include 'website/website-authors.html' %}
 
-<!-- Start other-issue Area -->
-<section class="other-issue-area section-gap">
-	<div class="container">
-		<div class="row d-flex justify-content-center">
-			<div class="menu-content pb-70 col-lg-9">
-				<div class="title text-center">
-					<h1 class="mb-10">Other issues we can help you with</h1>
-					<p>We all live in an age that belongs to the young at heart. Life that is.</p>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-3 col-md-6">
-				<div class="single-other-issue">
-					<div class="thumb">
-						<img class="img-fluid" src="{% static 'img/o1.jpg' %}" alt="">
-					</div>
-					<a href="#">
-						<h4>Rent a Car</h4>
-					</a>
-					<p>
-						The preservation of human life is the ultimate value, a pillar of ethics and the foundation.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="single-other-issue">
-					<div class="thumb">
-						<img class="img-fluid" src="{% static 'img/o2.jpg' %}" alt="">
-					</div>
-					<a href="#">
-						<h4>Cruise Booking</h4>
-					</a>
-					<p>
-						I was always somebody who felt quite sorry for myself, what I had not got compared.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="single-other-issue">
-					<div class="thumb">
-						<img class="img-fluid" src="{% static 'img/o3.jpg' %}" alt="">
-					</div>
-					<a href="#">
-						<h4>To Do List</h4>
-					</a>
-					<p>
-						The following article covers a topic that has recently moved to center stage–at least it seems.
-					</p>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="single-other-issue">
-					<div class="thumb">
-						<img class="img-fluid" src="{% static 'img/o4.jpg' %}" alt="">
-					</div>
-					<a href="#">
-						<h4>Food Features</h4>
-					</a>
-					<p>
-						There are many kinds of narratives and organizing principles. Science is driven by evidence.
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<!-- End other-issue Area -->
+{% Summary %}
+
+<div data-scroll-index="0" class="get_in_tauch_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="section_title text-center mb-90">
+                    <h3 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">Get in Touch</h3>
+                    <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">Tour function information
+                        without cross action media value quickly maximize timely deliverables.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="touch_form">
+                    <form action="{% url 'website:index' %}" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                                    <input type="text" name="name" placeholder="Your Name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                                    <input type="email" name="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                                    <input type="text" name="subject" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".6s">
+                                    <textarea name="message" id="" cols="30" placeholder="Message" rows="10"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6" >
+                                <div class="single_input wow fadeInUp" data-wow-duration="1s" data-wow-delay=".4s">
+                                    {{form.captcha}}
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="submit_btn wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">
+                                    <button class="boxed-btn3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
